@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>우리동네 운동모임 - 함께 만드는 동네 운동 커뮤니티</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Pretendard 폰트 -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===========================
+       APP SHELL (모바일 화면 프레임)
+       =========================== -->
+  <div class="app-shell" id="app-shell">
+
+    <!-- 상단 앱바 -->
+    <header class="site-header" id="site-header">
+      <div class="header-top">
+        <a href="#hero" class="logo">
+          <span class="logo-icon">🏃</span>
+          <span class="logo-text">우리동네 운동모임</span>
+        </a>
+        <button class="icon-btn" id="share-btn" aria-label="모임 링크 공유하기">🔗</button>
+      </div>
+
+      <!-- 가로 스크롤 퀵 메뉴 (당근 모임 탭 참고) -->
+      <nav class="quick-nav" aria-label="빠른 이동 메뉴">
+        <a href="#about" class="quick-nav-chip" data-section="about">홈</a>
+        <a href="#schedule" class="quick-nav-chip" data-section="schedule">일정</a>
+        <a href="#guide" class="quick-nav-chip" data-section="guide">참여안내</a>
+        <a href="#instructors" class="quick-nav-chip" data-section="instructors">멤버</a>
+        <a href="#reviews" class="quick-nav-chip" data-section="reviews">후기</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- ===========================
+           HERO (모임 커버)
+           =========================== -->
+      <section class="hero" id="hero">
+        <div class="hero-cover">
+          <span>🏃‍♂️</span><span>🏸</span><span>⛰️</span>
+        </div>
+
+        <div class="hero-body">
+          <div class="hero-tags">
+            <span class="tag">#러닝</span>
+            <span class="tag">#배드민턴</span>
+            <span class="tag">#등산</span>
+          </div>
+
+          <h1 class="hero-title">우리동네 운동모임</h1>
+          <p class="hero-desc">
+            혼자 하면 작심삼일, 함께하면 오래갑니다.
+            러닝·배드민턴·등산을 동네 이웃과 함께 즐겨요.
+          </p>
+
+          <div class="hero-meta">
+            <span>📍 성동구 성수동</span>
+            <span class="dot" aria-hidden="true">·</span>
+            <span>👥 20명 참여중</span>
+            <span class="dot" aria-hidden="true">·</span>
+            <span>📅 2024년 개설</span>
+          </div>
+
+          <div class="hero-avatars" aria-label="참여 중인 멤버 미리보기">
+            <span class="avatar-circle">🙂</span>
+            <span class="avatar-circle">😊</span>
+            <span class="avatar-circle">😄</span>
+            <span class="avatar-circle more">+17</span>
+          </div>
+
+          <a href="#contact" class="btn btn-primary hero-btn">가입 문의하기</a>
+        </div>
+      </section>
+
+      <!-- ===========================
+           모임 정보 (당근 모임 정보 리스트 참고)
+           =========================== -->
+      <section class="section fade-in-section" id="about">
+        <div class="section-head-sm">
+          <h2>모임 정보</h2>
+        </div>
+
+        <div class="info-list">
+          <div class="info-row">
+            <span class="info-icon">🎽</span>
+            <div class="info-text">
+              <strong>종목</strong>
+              <p>러닝 · 배드민턴 · 등산 (관심 있는 종목만 골라 참여 가능)</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">🌱</span>
+            <div class="info-text">
+              <strong>난이도</strong>
+              <p>완전 초보 환영 · 체력이 없어도 OK</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">🤝</span>
+            <div class="info-text">
+              <strong>분위기</strong>
+              <p>경쟁 없이 편하게, 서로 알려주며 함께해요</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">💰</span>
+            <div class="info-text">
+              <strong>참가비</strong>
+              <p>월 15,000원 (장소 대관료 + 장비 관리비, 첫 체험 무료)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+           정기 모임 일정
+           =========================== -->
+      <section class="section fade-in-section" id="schedule">
+        <div class="section-head-sm">
+          <h2>정기 모임 일정</h2>
+          <p>요일마다 다른 종목이 열려요</p>
+        </div>
+
+        <!-- 탭 버튼 목록 -->
+        <div class="tab-buttons" role="tablist" aria-label="요일별 일정">
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-mon" data-day="mon">월요일 · 러닝</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-wed" data-day="wed">수요일 · 배드민턴</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-sat" data-day="sat">토요일 · 등산</button>
+        </div>
+
+        <!-- 탭 컨텐츠 -->
+        <div class="tab-panels">
+          <!-- 월요일: 러닝 -->
+          <div class="tab-panel active" id="tab-mon" role="tabpanel" aria-label="월요일 러닝 일정">
+            <div class="schedule-card">
+              <div class="schedule-info">
+                <div class="schedule-item">
+                  <span class="schedule-label">시간</span>
+                  <span class="schedule-value">저녁 7:30 ~ 8:30</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">장소</span>
+                  <span class="schedule-value">성수동 서울숲 입구</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">정원</span>
+                  <span class="schedule-value">10명 (현재 6명 참여 중)</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">내용</span>
+                  <span class="schedule-value">3~5km 가볍게 걷기 &amp; 달리기 (페이스 자유, 완주보다 완참)</span>
+                </div>
+              </div>
+              <div class="schedule-map-placeholder">
+                <p>📍 서울숲 입구</p>
+                <small>서울시 성동구 성수동1가 000-00</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- 수요일: 배드민턴 -->
+          <div class="tab-panel" id="tab-wed" role="tabpanel" aria-label="수요일 배드민턴 일정">
+            <div class="schedule-card">
+              <div class="schedule-info">
+                <div class="schedule-item">
+                  <span class="schedule-label">시간</span>
+                  <span class="schedule-value">저녁 8:00 ~ 9:30</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">장소</span>
+                  <span class="schedule-value">성수동 실내체육관 배드민턴장</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">정원</span>
+                  <span class="schedule-value">8명 (현재 5명 참여 중)</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">내용</span>
+                  <span class="schedule-value">기초 스트로크 연습 &amp; 복식 게임 (라켓 대여 가능)</span>
+                </div>
+              </div>
+              <div class="schedule-map-placeholder">
+                <p>📍 성수 실내체육관</p>
+                <small>서울시 성동구 성수동 2가 000-00</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- 토요일: 등산 -->
+          <div class="tab-panel" id="tab-sat" role="tabpanel" aria-label="토요일 등산 일정">
+            <div class="schedule-card">
+              <div class="schedule-info">
+                <div class="schedule-item">
+                  <span class="schedule-label">시간</span>
+                  <span class="schedule-value">오전 9:00 ~ 12:30 (반나절 코스)</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">장소</span>
+                  <span class="schedule-value">매주 다른 근교 산 (이번 주는 관악산 둘레길)</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">정원</span>
+                  <span class="schedule-value">12명 (현재 9명 참여 중)</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">내용</span>
+                  <span class="schedule-value">초급자 코스 위주 등산 &amp; 정상에서 도시락 (날씨에 따라 변동)</span>
+                </div>
+              </div>
+              <div class="schedule-map-placeholder">
+                <p>📍 관악산 등산로 입구 (이번 주)</p>
+                <small>매주 집합 장소가 바뀌어요, 전날 공지 확인!</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+           참여 안내 (아코디언)
+           =========================== -->
+      <section class="section fade-in-section" id="guide">
+        <div class="section-head-sm">
+          <h2>참여 안내</h2>
+          <p>처음 오시는 분들이 가장 많이 물어보시는 질문들이에요</p>
+        </div>
+
+        <div class="accordion" id="accordion">
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span>어떤 준비물이 필요한가요?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-body">
+              <p>종목마다 조금씩 달라요. <strong>러닝</strong>은 운동화와 물이면 충분하고, <strong>배드민턴</strong>은 편한 운동복이면 되고 라켓은 모임에서 대여할 수 있어요. <strong>등산</strong>은 등산화나 밑창이 좋은 운동화, 물과 간단한 간식을 챙겨오시면 됩니다. 장비가 없어도 첫 참여는 대여·공유로 해결할 수 있으니 편하게 오세요.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span>체력이 없어도 참여할 수 있나요?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-body">
+              <p>물론입니다! 모든 활동은 초보자 페이스에 맞춰 진행됩니다. 러닝은 걷기 위주로, 등산은 초급 코스로, 배드민턴은 기초부터 알려드려요. <strong>본인 속도에 맞게</strong> 무리하지 않고 참여하시면 자연스럽게 체력이 늘어나는 걸 느끼실 거예요.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span>여러 종목에 다 참여해야 하나요?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-body">
+              <p>아니요, <strong>관심 있는 종목만 골라서</strong> 참여하시면 됩니다. 러닝만 나오셔도 되고 세 가지 다 즐기셔도 좋아요. 요일별로 다른 종목이 열리니 원하는 날에 원하는 활동으로 오시면 됩니다.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span>주의사항이 있나요?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-body">
+              <ul>
+                <li>활동 시작 최소 10분 전에 도착해 가볍게 스트레칭해 주세요</li>
+                <li>개인 물통은 꼭 챙겨주세요 (특히 여름철!)</li>
+                <li>부상이나 지병이 있다면 사전에 리더에게 알려주세요</li>
+                <li>러닝·등산은 날씨에 따라 일정이 변경될 수 있어요 (전날 공지)</li>
+                <li>초보자를 배려하는 매너를 지켜주세요</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span>참가비는 얼마인가요?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-body">
+              <p>월 회비는 <strong>15,000원</strong>입니다 (장소 대관료 + 장비 관리비 분담, 종목 참여 횟수와 무관). 처음 체험 참여 1회는 무료로 참여할 수 있어요. 마음에 드는 종목부터 편하게 참여해 보세요!</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===========================
+           멤버 (당근 모임 멤버 그리드 참고)
+           =========================== -->
+      <section class="section fade-in-section" id="instructors">
+        <div class="section-head-sm">
+          <h2>멤버</h2>
+          <p>각 종목을 이끄는 모임 리더들을 소개합니다</p>
+        </div>
+
+        <div class="member-grid">
+
+          <article class="member-card">
+            <div class="member-avatar-wrap">
+              <div class="member-avatar placeholder-photo"><span>👤</span></div>
+              <div class="leader-badge running">러닝</div>
+            </div>
+            <p class="member-name">김민준</p>
+            <p class="member-role">러닝 모임지기</p>
+            <p class="member-bio">함께 걷다 보면 어느새 5km, 페이스는 자유롭게!</p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar-wrap">
+              <div class="member-avatar placeholder-photo"><span>👤</span></div>
+              <div class="leader-badge badminton">배드민턴</div>
+            </div>
+            <p class="member-name">이수연</p>
+            <p class="member-role">배드민턴 코치</p>
+            <p class="member-bio">라켓이 처음이어도 두 달이면 랠리가 가능해요.</p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar-wrap">
+              <div class="member-avatar placeholder-photo"><span>👤</span></div>
+              <div class="leader-badge hiking">등산</div>
+            </div>
+            <p class="member-name">박태준</p>
+            <p class="member-role">등산 대장</p>
+            <p class="member-bio">정상보다 함께 걷는 과정이 더 즐거운 등산이에요.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===========================
+           회원 후기
+           =========================== -->
+      <section class="section fade-in-section" id="reviews">
+        <div class="section-head-sm">
+          <h2>회원 후기</h2>
+          <p>모임을 경험한 회원들의 이야기예요</p>
+        </div>
+
+        <div class="carousel-wrapper" role="region" aria-label="후기 슬라이드">
+          <div class="carousel-track" id="carousel-track">
+
+            <article class="review-slide">
+              <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+              <blockquote class="review-text">
+                "운동이라곤 담쌓고 살던 제가 지금은 매주 러닝하러 나가고 있어요. 처음엔 걷기만 했는데 지금은 5km를 뛸 수 있게 됐어요. 분위기가 편해서 부담 없이 계속하게 돼요."
+              </blockquote>
+              <footer class="review-author">
+                <div class="review-avatar">🙂</div>
+                <div>
+                  <strong>직장인 A씨</strong>
+                  <span>3개월째 참여 중</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="review-slide">
+              <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+              <blockquote class="review-text">
+                "배드민턴 라켓도 없었는데 대여해주셔서 바로 시작할 수 있었어요. 코치님이 정말 친절하게 알려주셔서 두 달 만에 랠리가 되더라고요. 여성분들도 많이 계셔서 편했습니다!"
+              </blockquote>
+              <footer class="review-author">
+                <div class="review-avatar">😊</div>
+                <div>
+                  <strong>30대 직장여성 B씨</strong>
+                  <span>2개월째 참여 중</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="review-slide">
+              <div class="review-stars" aria-label="별점 4점">★★★★☆</div>
+              <blockquote class="review-text">
+                "혼자 등산 가긴 무서웠는데 여기선 다들 페이스 맞춰서 같이 걸어줘요. 러닝이랑 등산 둘 다 참여하는데 요일별로 골라 나갈 수 있어서 좋아요. 소규모라 질문하기도 편합니다."
+              </blockquote>
+              <footer class="review-author">
+                <div class="review-avatar">😄</div>
+                <div>
+                  <strong>대학원생 C씨</strong>
+                  <span>1개월째 참여 중</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="review-slide">
+              <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+              <blockquote class="review-text">
+                "40대에 운동 처음 시작했는데 나이 상관없이 다들 반겨줘요. 배드민턴부터 시작해서 요즘은 러닝도 같이 하고 있어요. 종목이 다양해서 질리지 않는 게 제일 좋아요. 강추드려요!"
+              </blockquote>
+              <footer class="review-author">
+                <div class="review-avatar">🤗</div>
+                <div>
+                  <strong>40대 직장인 D씨</strong>
+                  <span>5개월째 참여 중</span>
+                </div>
+              </footer>
+            </article>
+
+          </div>
+
+          <!-- 이전/다음 버튼 -->
+          <div class="carousel-controls">
+            <button class="carousel-btn" id="carousel-prev" aria-label="이전 후기">&#8592;</button>
+            <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="후기 페이지"></div>
+            <button class="carousel-btn" id="carousel-next" aria-label="다음 후기">&#8594;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+           가입 신청 폼
+           =========================== -->
+      <section class="section contact-section fade-in-section" id="contact">
+        <div class="section-head-sm">
+          <h2>가입 신청</h2>
+          <p>양식을 작성해 주시면 48시간 내에 연락드릴게요</p>
+        </div>
+
+        <!-- 폼 완료 메시지 (기본 숨김) -->
+        <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
+          <div class="form-success-icon">✅</div>
+          <h3>신청이 완료되었습니다!</h3>
+          <p>빠른 시일 내에 연락드릴게요. 기대해 주세요 🏃</p>
+          <button class="btn btn-secondary" id="form-reset-btn">다시 작성하기</button>
+        </div>
+
+        <!-- 가입 신청 폼 -->
+        <form class="contact-form" id="contact-form" novalidate>
+
+          <div class="form-group">
+            <label for="name" class="form-label">이름 <span class="required" aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="홍길동"
+              autocomplete="name"
+              aria-required="true"
+              aria-describedby="name-error"
+            />
+            <span class="form-error" id="name-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">연락처 <span class="required" aria-hidden="true">*</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input"
+              placeholder="010-0000-0000"
+              autocomplete="tel"
+              aria-required="true"
+              aria-describedby="phone-error"
+            />
+            <span class="form-error" id="phone-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">관심있는 운동 <span class="optional">(복수 선택 가능)</span></label>
+            <div class="sport-options">
+              <label class="sport-option">
+                <input type="checkbox" name="sport" value="running" />
+                <span>🏃 러닝</span>
+              </label>
+              <label class="sport-option">
+                <input type="checkbox" name="sport" value="badminton" />
+                <span>🏸 배드민턴</span>
+              </label>
+              <label class="sport-option">
+                <input type="checkbox" name="sport" value="hiking" />
+                <span>⛰️ 등산</span>
+              </label>
+              <label class="sport-option">
+                <input type="checkbox" name="sport" value="undecided" />
+                <span>🤔 아직 잘 모르겠어요</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">한마디 <span class="optional">(선택)</span></label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-input form-textarea"
+              placeholder="운동을 시작하게 된 계기나 기대하는 점을 자유롭게 적어주세요 :)"
+              rows="4"
+              aria-describedby="message-hint"
+            ></textarea>
+            <span class="form-hint" id="message-hint">최대 300자</span>
+          </div>
+
+          <div class="form-group form-check-group">
+            <label class="form-check-label">
+              <input type="checkbox" id="privacy" name="privacy" aria-required="true" aria-describedby="privacy-error" />
+              <span>개인정보 수집 및 이용에 동의합니다 <span class="required" aria-hidden="true">*</span></span>
+            </label>
+            <span class="form-error" id="privacy-error" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit-btn">신청하기</button>
+        </form>
+      </section>
+
+    </main>
+
+    <!-- ===========================
+         FOOTER
+         =========================== -->
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="logo-icon">🏃</span>
+        <span class="logo-text">우리동네 운동모임</span>
+      </div>
+      <div class="footer-contact">
+        <p>📧 neighborhood.sports@example.com</p>
+        <p>📱 카카오채널: @우리동네운동모임</p>
+      </div>
+      <p class="footer-copy">
+        &copy; 2026 우리동네 운동모임. 함께 움직이고 함께 건강해져요 🏃
+      </p>
+    </footer>
+
+    <!-- 하단 고정 가입 문의 바 (당근 모임 하단 CTA 참고) -->
+    <div class="sticky-cta" id="sticky-cta">
+      <div class="sticky-cta-info">
+        <strong>월 15,000원</strong>
+        <span>· 20명 활동중</span>
+      </div>
+      <a href="#contact" class="btn btn-primary sticky-cta-btn">가입 문의하기</a>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
